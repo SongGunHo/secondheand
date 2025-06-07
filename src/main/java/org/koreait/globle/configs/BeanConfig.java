@@ -1,4 +1,4 @@
-package org.koreait.globle.config;
+package org.koreait.global.configs;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
@@ -28,5 +28,14 @@ public class BeanConfig {
     }
 
     private class ModelMapper {
+
+        ModelMapper mo = new ModelMapper();
+
+
+
+
+    }
+
+    private class MatchingStrategies {
     }
 }

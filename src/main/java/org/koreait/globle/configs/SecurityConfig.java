@@ -1,7 +1,10 @@
 package org.koreait.global.configs;
 
 import lombok.RequiredArgsConstructor;
-import org.koreait.member.service.*;
+import org.koreait.member.service.LoginFailureHandler;
+import org.koreait.member.service.MemberAccessDeniedHandler;
+import org.koreait.member.service.MemberAuthenticationExceptionHandler;
+import org.koreait.member.service.MemberInfoService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -23,13 +26,13 @@ public class SecurityConfig {
             c.loginPage("/member/login")
                     .usernameParameter("email")
                     .passwordParameter("password")
-                    .successHandler(new LoginSuccessHandler())
+                    .successHandler(new org.koreait.member.services.LoginSuccessHandler())
                     .failureHandler(new LoginFailureHandler());
         });
 
         http.logout(c -> {
-            c.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                    .logoutSuccessUrl("/member/login");
+            c.logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
+            c.logoutSuccessUrl("/member/login");
         });
         /* 인증 설정 - 로그인, 로그아웃 E */
 
@@ -38,7 +41,7 @@ public class SecurityConfig {
             c.rememberMeParameter("autoLogin")
                     .tokenValiditySeconds(60 * 60 * 24 * 7) // 7일간 자동 로그인 유지
                     .userDetailsService(memberInfoService)
-                    .authenticationSuccessHandler(new LoginSuccessHandler());
+                    .authenticationSuccessHandler(new org.koreait.member.services.LoginSuccessHandler());
         });
 
         /* 인가 설정 - 자원에 대한 접근 권한 설정 S */
