@@ -1,4 +1,4 @@
-package org.koreait.globle;
+package org.koreait.globle.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.ResourceBundleMessageSource;

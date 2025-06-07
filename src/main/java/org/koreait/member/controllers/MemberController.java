@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.apache.coyote.http11.Constants.a;
 
 @Controller
@@ -38,11 +41,11 @@ public class MemberController {
 
 
     @PostMapping("/loginPs")
-    public String loginPs( Model model, @ModelAttribute RequestLogin form , Error erre){
+    public String loginPs( Model model, @ModelAttribute RequestLogin form , Error erre, HttpSession session){
 
-        Member login = service.findbyEmail(form.getEmail());
+        List<Member> login = new ArrayList<>();
         if(login !=null && login.equals(join())){
-            model.addAllAttributes('f',  a);
+            session.setAttribute("login",  login);
             return "rdirect:/member/login ";
         } else {
             return "/main/index";

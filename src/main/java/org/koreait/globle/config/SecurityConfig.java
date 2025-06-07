@@ -1,8 +1,7 @@
 package org.koreait.global.configs;
 
 import lombok.RequiredArgsConstructor;
-import org.koreait.member.service.MemberInfoService;
-import org.koreait.member.services.*;
+import org.koreait.member.service.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -21,7 +20,7 @@ public class SecurityConfig {
 
         /* 인증 설정 - 로그인, 로그아웃 S */
         http.formLogin(c -> {
-            c.loginPage("/member/login"
+            c.loginPage("/member/login")
                     .usernameParameter("email")
                     .passwordParameter("password")
                     .successHandler(new LoginSuccessHandler())
