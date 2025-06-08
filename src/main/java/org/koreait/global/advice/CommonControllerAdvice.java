@@ -3,7 +3,7 @@ package org.koreait.global.advice;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.koreait.global.exceprions.CommonException;
-import org.koreait.global.exceprions.script.AlertBackException;
+import org.koreait.global.exceprions.script.AlAlertBackException;
 import org.koreait.global.exceprions.script.AlertException;
 import org.koreait.global.exceprions.script.AlertRedirectException;
 import org.springframework.http.HttpStatus;
@@ -34,17 +34,17 @@ public class CommonControllerAdvice {
             }
 
             // 자바스크립트 alert 형태로 출력하는 예외
-            if (e instanceof AlertException) {
+            if (e instanceof org.koreait.global.exceptions.script.AlertException) {
                 tpl = "common/_execute_script";
                 String callback = "";
 
                 // history.back() 추가
-                if (e instanceof AlertBackException alertBackException) {
+                if (e instanceof org.koreait.global.exceptions.script.AlertBackException alertBackException) {
                     callback = String.format("() => %s.history.back()", alertBackException.getTarget());
                 }
 
                 // location.replace(..) 추가
-                if (e instanceof AlertRedirectException redirectException) {
+                if (e instanceof org.koreait.global.exceptions.script.AlertBackException redirectException) {
                     callback = String.format("() => %s.location.replace('%s')", redirectException.getTarget(), request.getContextPath() + redirectException.getUrl());
                 }
 

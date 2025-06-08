@@ -1,7 +1,7 @@
 package org.koreait.member.libs;
 
+import org.koreait.member.Authority;
 import org.koreait.member.MemberInfo;
-import org.koreait.member.controllers.Authority;
 import org.koreait.member.entities.Member;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.security.core.Authentication;
@@ -18,7 +18,7 @@ public class MemberUtil {
 
     // 관리자 여부
     public boolean isAdmin() {
-        return isLogin() && getMember().getAuthority() == Authority.ADMIN;
+        return isLogin() && getMember().getAuthority() == Authority.ADMIM;
     }
 
     // 로그인한 회원 정보
