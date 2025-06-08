@@ -1,7 +1,7 @@
 package org.koreait.member.entities;
 
 import lombok.Data;
-import org.koreait.globle.entities.BaseEntity;
+import org.koreait.global.entities.BaseEntity;
 import org.koreait.member.Authority;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;

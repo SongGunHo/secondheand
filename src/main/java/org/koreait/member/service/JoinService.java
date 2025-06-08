@@ -1,15 +1,15 @@
-package org.koreait.member.service;
+package org.koreait.member.services;
 
 import lombok.RequiredArgsConstructor;
 import org.koreait.member.controllers.RequestJoin;
-import org.koreait.member.repository.MemberRepository;
+import org.koreait.member.entities.Member;
+import org.koreait.member.repositories.MemberRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import java.lang.reflect.Member;
 import java.time.LocalDateTime;
 
 @Lazy
