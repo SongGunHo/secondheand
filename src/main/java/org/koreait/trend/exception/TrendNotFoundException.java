@@ -8,6 +8,7 @@ public class TrendNotFoundException extends NotFoundException {
 
 
     public TrendNotFoundException(){
+
         super("NotFound.trend");
     }
 

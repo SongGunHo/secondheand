@@ -21,6 +21,11 @@ public class Menus {
                 new Menu("list", "회원목록", "/admin/member")
         ));
 
+        // 상품 등록
+        menus.put("product ", List.of(
+                new Menu("List", "상품등록")
+        ))
+
         // 트렌드 관리 메뉴
         menus.put("trend", List.of(
                 new Menu("news", "뉴스", "/admin/trend"),

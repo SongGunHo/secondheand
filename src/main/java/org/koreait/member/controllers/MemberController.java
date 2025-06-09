@@ -28,7 +28,8 @@ public class MemberController {
 
     @ModelAttribute("addCss")
     public List<String> addCss() {
-        return List.of("member/style");
+        return List.of(
+                "member/style");
     }
 
     @ModelAttribute("requestLogin")

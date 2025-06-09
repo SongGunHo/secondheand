@@ -9,8 +9,8 @@ import java.util.Optional;
 public interface MemberRepository extends ListCrudRepository<Member, Log> {
 
 
-
-    Optional<Member>fineBhEmail(String email);
+    boolean existsByEmail(String email);
+    Optional<Member>findByEmail(String email);
 
 
 

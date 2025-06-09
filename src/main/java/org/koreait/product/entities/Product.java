@@ -1,0 +1,39 @@
+package org.koreait.product.entities;
+
+import lombok.Data;
+import org.koreait.global.entities.BaseEntity;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.data.relational.core.mapping.Table;
+
+@Data
+@Table("PRODUCT")
+public class Product extends BaseEntity {
+
+    @Id
+    private Long seq;
+    private String gid;
+    private String name;
+    private String category;
+    private String ProductStatus;
+    @Column("consumerProduct")
+    private String comsumerProduct;
+
+    @Column("salePrice")
+    private int salePrice;
+    private String description;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

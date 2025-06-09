@@ -2,9 +2,10 @@ package org.koreait.member.services;
 
 import lombok.RequiredArgsConstructor;
 import org.koreait.member.MemberInfo;
-import org.koreait.member.constants.Authority;
+import org.koreait.member.consts.Authority;
+import org.koreait.member.consts.Authority;
 import org.koreait.member.entities.Member;
-import org.koreait.member.repositories.MemberRepository;
+import org.koreait.member.repository.MemberRepository;
 import org.koreait.member.repository.MemberRepository;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -25,7 +26,7 @@ public class MemberInfoService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Member member = repository.findByEmail(username).orElseThrow(() -> new UsernameNotFoundException(username));
+        Member member = (Member) repository.findByEmail(username).orElseThrow(() -> new UsernameNotFoundException(username));
 
         Authority authority = Objects.requireNonNullElse(member.getAuthority(), Authority.MEMBER);
 

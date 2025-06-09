@@ -1,4 +1,4 @@
-package org.koreait.member;
+package org.koreait.member.consts;
 
 public enum Authority {
 

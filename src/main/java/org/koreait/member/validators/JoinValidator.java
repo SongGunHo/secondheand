@@ -1,11 +1,9 @@
 package org.koreait.member.validators;
 
 import lombok.RequiredArgsConstructor;
-import org.koreait.global.validators.MobileValidator;
+import org.koreait.global.vaildators.MobileValidator;
 import org.koreait.global.validators.PasswordValidator;
 import org.koreait.member.controllers.RequestJoin;
-import org.koreait.member.repositories.MemberRepository;
-import org.koreait.member.repository.MemberRepository;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;

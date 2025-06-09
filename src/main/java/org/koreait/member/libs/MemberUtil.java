@@ -1,6 +1,6 @@
 package org.koreait.member.libs;
 
-import org.koreait.member.Authority;
+import org.koreait.member.consts.Authority;
 import org.koreait.member.MemberInfo;
 import org.koreait.member.entities.Member;
 import org.springframework.context.annotation.Lazy;

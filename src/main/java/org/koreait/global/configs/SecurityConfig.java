@@ -1,7 +1,7 @@
 package org.koreait.global.configs;
 
 import lombok.RequiredArgsConstructor;
-import org.koreait.member.service.MemberAccessDeniedHandler;
+import org.koreait.member.services.MemberAccessDeniedHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

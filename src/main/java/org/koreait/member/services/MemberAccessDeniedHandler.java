@@ -1,4 +1,4 @@
-package org.koreait.member.service;
+package org.koreait.member.services;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
