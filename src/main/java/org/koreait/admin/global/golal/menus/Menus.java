@@ -1,10 +1,11 @@
 package org.koreait.admin.global.menus;
 
 import org.koreait.admin.global.golal.menus.Menu;
+import org.koreait.admin.global.search.ListDate;
+import org.koreait.admin.member.controllers.MemberSearch;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.lang.reflect.Member;
+import java.util.*;
 
 public class Menus {
     private static Map<String, List<Menu>> menus = new HashMap<>();
@@ -43,3 +44,25 @@ public class Menus {
         return menus.getOrDefault(mainCode, List.of());
     }
 }
+    public ListDate<Member> getList(MemberSearch search){
+    int page = Math.max(search.getPage(), 1);
+    int limit = search.getLimit;
+    limit = limit < 1 ? 20 : limit;
+    int offset = (page -1) *limit;
+
+    List<String> addWhere = new ArrayList<>();
+    List<Object> params= new ArrayList<>();
+
+    params.add(offset);
+    params.add(limit);
+
+    StringBuffer sb  = new StringBuffer(2000);
+    sb.append( "SELECT * FORM MEMBER");
+    sb.append("ORDER BY createdAt DESC");
+    sb.append("LIMIT");
+
+    List<Member> items=
+
+
+
+    }
