@@ -7,7 +7,7 @@
     <h2>회원 검색</h2>
 
     <h2>회원 목록</h2>
-
+    <form th:action="@{/admin/member}" method="get" name="frmSearch" th:object="${memberSearch}"></form>
     <th:block th:replace="~{common/_pagination::pagination}"></th:block>
 </section>
 </html>
