@@ -1,7 +1,6 @@
 package org.koreait.admin.global.menus;
 
 import org.koreait.admin.global.golal.menus.Menu;
-import org.koreait.admin.global.search.ListDate;
 import org.koreait.admin.member.controllers.MemberSearch;
 
 import java.lang.reflect.Member;
@@ -24,8 +23,8 @@ public class Menus {
 
         // 상품 등록
         menus.put("product ", List.of(
-                new Menu("List", "상품등록")
-        ))
+                new Menu("list", "회원목록", "/admin/member")
+        ));
 
         // 트렌드 관리 메뉴
         menus.put("trend", List.of(
@@ -43,25 +42,8 @@ public class Menus {
     public static List<Menu> getMenus(String mainCode) {
         return menus.getOrDefault(mainCode, List.of());
     }
-}
-    public ListDate<Member> getList(MemberSearch search){
-    int page = Math.max(search.getPage(), 1);
-    int limit = search.getLimit;
-    limit = limit < 1 ? 20 : limit;
-    int offset = (page -1) *limit;
 
-    List<String> addWhere = new ArrayList<>();
-    List<Object> params= new ArrayList<>();
 
-    params.add(offset);
-    params.add(limit);
-
-    StringBuffer sb  = new StringBuffer(2000);
-    sb.append( "SELECT * FORM MEMBER");
-    sb.append("ORDER BY createdAt DESC");
-    sb.append("LIMIT");
-
-    List<Member> items=
 
 
 

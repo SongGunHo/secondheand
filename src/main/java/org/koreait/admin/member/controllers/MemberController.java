@@ -1,14 +1,27 @@
 package org.koreait.admin.member.controllers;
 
+import lombok.RequiredArgsConstructor;
 import org.koreait.admin.global.golal.controllers.CommonController;
+import org.koreait.global.search.ListData;
+import org.koreait.member.services.MemberInfoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.lang.reflect.Member;
+import java.util.List;
+
+@RequiredArgsConstructor
 @Controller
 @RequestMapping("/admin/member")
 public class MemberController extends CommonController {
+    private final MemberInfoService service;
+
+
+
     @Override
     public String mainCode() {
         return "member";
@@ -17,9 +30,11 @@ public class MemberController extends CommonController {
 
 
     @GetMapping({"", "/list"})
-    public String list(Model model){
-        commonProcess("list",model);
-
+    public String list(@ModelAttribute MemberSearch search, Model model){
+        commonProcess("list", model);
+        ListData< Member> data = service.getList(search);
+        model.addAttribute("items", data.getItems());
+        model.addAttribute("pagination", data.getPagination());
 
 
 
@@ -33,7 +48,15 @@ public class MemberController extends CommonController {
      */
 
 
-    private void commonProcess(){
-        String code =
+    private void commonProcess(String code, Model model){
+        code = StringUtils.hasText(code) ? code :"list";
+        String pageTitle ="";
+        if(code.equals("list")){
+            pageTitle ="회원 목록";
+
+        }
+
+        model.addAttribute("pageTitle", pageTitle);
+        model.addAttribute("subCode", code);
     }
 }
