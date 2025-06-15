@@ -2,7 +2,7 @@ package org.koreait.admin.product.services;
 
 import lombok.RequiredArgsConstructor;
 import org.koreait.admin.product.controllers.RequestProduct;
-import org.koreait.modelMapper.ModelMapper;
+
 import org.koreait.product.entities.Product;
 import org.koreait.product.repositorys.ProductRepository;
 import org.springframework.context.annotation.Lazy;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 public class ProductUpdateService {
 
     private final ProductRepository repository;
-    private final ModelMapper modelMapper;
+
 
     public Product process(RequestProduct form){
         String mode = form.getMode();

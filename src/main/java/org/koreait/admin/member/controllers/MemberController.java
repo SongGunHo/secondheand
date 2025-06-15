@@ -2,7 +2,7 @@ package org.koreait.admin.member.controllers;
 
 import lombok.RequiredArgsConstructor;
 import org.koreait.admin.global.golal.controllers.CommonController;
-import org.koreait.global.search.ListData;
+import org.koreait.global.search.ListDate1;
 import org.koreait.member.services.MemberInfoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.lang.reflect.Member;
-import java.util.List;
 
 @RequiredArgsConstructor
 @Controller
@@ -32,7 +31,7 @@ public class MemberController extends CommonController {
     @GetMapping({"", "/list"})
     public String list(@ModelAttribute MemberSearch search, Model model){
         commonProcess("list", model);
-        ListData< Member> data = service.getList(search);
+        ListDate1< Member> data = service.getList(search);
         model.addAttribute("items", data.getItems());
         model.addAttribute("pagination", data.getPagination());
 

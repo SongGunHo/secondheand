@@ -5,15 +5,13 @@ import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.koreait.admin.global.search.Pagination;
 import org.koreait.admin.member.controllers.MemberSearch;
-import org.koreait.global.search.ListData;
+import org.koreait.global.search.ListDate1;
 import org.koreait.global.search.Pagination;
 import org.koreait.member.MemberInfo;
 import org.koreait.member.constants.Authority;
-import org.koreait.member.consts.Authority;
 import org.koreait.member.controllers.MemberSearch;
 import org.koreait.member.entities.Member;
 import org.koreait.member.repositories.MemberRepository;
-import org.koreait.member.repository.MemberRepository;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -63,7 +61,7 @@ public class MemberInfoService implements UserDetailsService {
      * @param search
      * @return
      */
-    public ListData<Member> getList(MemberSearch search) {
+    public ListDate1<Member> getList(MemberSearch search) {
         int page = Math.max(search.getPage(), 1);
         int limit = search.getLimit();
         limit = limit < 1 ? 20 : limit;
@@ -137,7 +135,7 @@ public class MemberInfoService implements UserDetailsService {
         Pagination pagination = new Pagination(page, total, 10, 20, request);
 
 
-        return new ListData<>(items, pagination);
+        return new ListDate1<>(items, pagination);
     }
 
     private Member mapper(ResultSet rs, int i) throws SQLException {

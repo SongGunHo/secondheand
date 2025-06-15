@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
-import org.koreait.global.search.CommonSearch;
+import org.koreait.global.search.CommonSearch1;
 import org.koreait.trend.entities.Trend;
 import org.koreait.trend.exceptions.TrendNotFoundException;
 import org.koreait.trend.repositories.TrendRepository;
@@ -51,7 +51,7 @@ public class TrendInfoService {
      *
      * @return
      */
-    public List<Trend> getList(String category, CommonSearch search) {
+    public List<Trend> getList(String category, CommonSearch1 search) {
         LocalDate sDate = Objects.requireNonNullElse(search.getSDate(), LocalDate.now());
         LocalDate eDate = Objects.requireNonNullElse(search.getEDate(), LocalDate.now());
         List<Trend> data = repository.getList(category, sDate.atStartOfDay(), LocalDateTime.of(eDate, LocalTime.of(23, 59, 59)));
@@ -78,7 +78,7 @@ public class TrendInfoService {
         statData.put("now", now);
 
 
-        CommonSearch search = new CommonSearch();
+        CommonSearch1 search = new CommonSearch1();
         search.setEDate(today);
 
         /**
