@@ -8,11 +8,13 @@
 .안슬기
      -
 .오경석
-     -
+     - css, html
+     - trend 클래스 코드 작성
 .송근호
   - secondheand 프로젝트 생성
   - member 패키지 생성
-  - trend  클래스 중 entiti 패키지 생성ㅋ
+  - trend  클래스 중 entitiy 패키지 생성
+  - trend 클래스 코드 작성
 ## 기능 설명
    . 네이버 뉴스(htttpss://www.naver.com) 데이터를 가지고 조회
      - 파이썬으로 데이터를 추출
