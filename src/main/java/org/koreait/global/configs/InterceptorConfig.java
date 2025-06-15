@@ -2,6 +2,7 @@ package org.koreait.global.configs;
 
 import lombok.RequiredArgsConstructor;
 import org.koreait.global.interceptor.CommonInterceptor;
+import org.koreait.global.interceptor.CommonInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -11,7 +12,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class InterceptorConfig implements WebMvcConfigurer {
 
     private final CommonInterceptor commonInterceptor;
-
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(commonInterceptor); // 공통 인터셉터

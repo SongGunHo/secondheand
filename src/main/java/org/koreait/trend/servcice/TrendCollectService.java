@@ -1,4 +1,4 @@
-package org.koreait.trend.services;
+package org.koreait.trend.servcice;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -41,7 +41,7 @@ public class TrendCollectService {
         // spring.profiles.active=default,prod
         // 최초 유입된 url 이라면 저장 처리(news.naver.com은 제외)
         // 등록된 URL은 주기적으로 조회하게 됨
-        if (!url.contains("news.naver.com") && !urlRepository.existsById(url)) {
+        if (!url.contains("news.naver.com") && !urlRepository.existsById(urlRepository.count())) {
             jdbcTemplate.update("INSERT INTO TREND_URL VALUES(?)", url);
         }
 

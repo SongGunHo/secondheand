@@ -1,10 +1,10 @@
-package org.koreait.global.exceptions.script;
+package org.koreait.global.exceprions.script;
 
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
 @Getter
-public class AlertRedirectException extends org.koreait.global.exceptions.script.AlertException {
+public class AlertRedirectException extends org.koreait.global.exceprions.script.AlertException {
     private final String target;
     private final String url;
 

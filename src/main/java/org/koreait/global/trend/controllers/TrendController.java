@@ -1,8 +1,10 @@
 package org.koreait.global.trend.controllers;
 
 import lombok.RequiredArgsConstructor;
-import org.koreait.global.golal.controllers.CommonController;
+import org.koreait.admin.golal.controllers.CommonController;
+import org.koreait.admin.golal.controllers.CommonController;
 import org.koreait.trend.entities.Trend;
+//import org.koreait.trend.servcice.TrendInfoService;
 import org.koreait.trend.servcice.TrendInfoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

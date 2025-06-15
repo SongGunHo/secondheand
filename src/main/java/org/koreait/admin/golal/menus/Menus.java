@@ -1,4 +1,4 @@
-package org.koreait.global.golal.menus;
+package org.koreait.admin.golal.menus;
 
 import java.util.*;
 

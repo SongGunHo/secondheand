@@ -1,10 +1,10 @@
 package org.koreait.member.services;
 
 import lombok.RequiredArgsConstructor;
-import org.koreait.modelMapper.ModelMapper;
+
 import org.koreait.member.controllers.RequestJoin;
 import org.koreait.member.entities.Member;
-import org.koreait.modelMapper.ModelMapper;
+
 import org.springframework.context.annotation.Lazy;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 public class JoinService {
 
-        private final ModelMapper modelMapper;
+
         private final PasswordEncoder encoder;
         private final org.koreait.member.repository.MemberRepository repository;
 

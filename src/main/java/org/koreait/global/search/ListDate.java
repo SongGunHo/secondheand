@@ -3,6 +3,8 @@ package org.koreait.global.search;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.koreait.trend.entities.Trend;
+import org.koreait.trend.entities.TrendUrl;
 
 import java.util.List;
 
@@ -11,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 public class ListDate<T>{
 
-    private List<T> items;
+    private List<TrendUrl> items;
     private Pagination pagination;
 
 }

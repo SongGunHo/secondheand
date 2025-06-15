@@ -1,4 +1,4 @@
-package org.koreait.global.exceptions.script;
+package org.koreait.global.exceprions.script;
 
 import org.koreait.global.exceprions.CommonException;
 import org.springframework.http.HttpStatus;

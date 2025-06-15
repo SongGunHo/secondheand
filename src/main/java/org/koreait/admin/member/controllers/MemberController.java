@@ -1,7 +1,7 @@
 package org.koreait.admin.member.controllers;
 
 import lombok.RequiredArgsConstructor;
-import org.koreait.global.golal.controllers.CommonController;
+import org.koreait.admin.golal.controllers.CommonController;
 import org.koreait.global.search.ListDate;
 import org.koreait.member.services.MemberInfoService;
 import org.springframework.stereotype.Controller;

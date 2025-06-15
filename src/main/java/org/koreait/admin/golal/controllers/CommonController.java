@@ -1,4 +1,4 @@
-package org.koreait.global.golal.controllers;
+package org.koreait.admin.golal.controllers;
 
 import org.springframework.web.bind.annotation.ModelAttribute;
 

@@ -22,7 +22,7 @@ import java.util.*;
 public class TrendInfoService {
 
     private final TrendRepository repository;
-    private final org.koreait.trend.services.TrendCollectService collectService;
+    private final org.koreait.trend.servcice.TrendCollectService collectService;
     private final ObjectMapper om;
     /**
      * 최근 트렌드 1개 조회
