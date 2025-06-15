@@ -1,8 +1,6 @@
 package org.koreait.global.search;
 
 import org.junit.jupiter.api.Test;
-import org.koreait.admin.global.search.Pagination;
-import org.springframework.data.relational.core.mapping.Table;
 
 import java.util.Arrays;
 

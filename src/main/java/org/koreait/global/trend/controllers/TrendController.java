@@ -1,9 +1,9 @@
-package org.koreait.admin.trend.controllers;
+package org.koreait.global.trend.controllers;
 
 import lombok.RequiredArgsConstructor;
-import org.koreait.admin.global.golal.controllers.CommonController;
+import org.koreait.global.golal.controllers.CommonController;
 import org.koreait.trend.entities.Trend;
-import org.koreait.trend.services.TrendInfoService;
+import org.koreait.trend.servcice.TrendInfoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -45,7 +45,7 @@ public class TrendController extends CommonController {
     }
 
     @GetMapping("/etc")
-    public String etc(@ModelAttribute org.koreait.admin.trend.controllers.TrendSearch search, Model model) {
+    public String etc(@ModelAttribute TrendSearch search, Model model) {
         commonProcess("etc", model);
         String url = search.getSiteUrl();
 

@@ -1,10 +1,10 @@
-package org.koreait.trend.services;
+package org.koreait.trend.servcice;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
-import org.koreait.global.search.CommonSearch1;
+import org.koreait.global.search.CommonSearch;
 import org.koreait.trend.entities.Trend;
 import org.koreait.trend.exceptions.TrendNotFoundException;
 import org.koreait.trend.repositories.TrendRepository;
@@ -51,7 +51,7 @@ public class TrendInfoService {
      *
      * @return
      */
-    public List<Trend> getList(String category, CommonSearch1 search) {
+    public List<Trend> getList(String category, CommonSearch search) {
         LocalDate sDate = Objects.requireNonNullElse(search.getSDate(), LocalDate.now());
         LocalDate eDate = Objects.requireNonNullElse(search.getEDate(), LocalDate.now());
         List<Trend> data = repository.getList(category, sDate.atStartOfDay(), LocalDateTime.of(eDate, LocalTime.of(23, 59, 59)));
@@ -78,7 +78,7 @@ public class TrendInfoService {
         statData.put("now", now);
 
 
-        CommonSearch1 search = new CommonSearch1();
+        CommonSearch search = new CommonSearch();
         search.setEDate(today);
 
         /**
@@ -117,7 +117,7 @@ public class TrendInfoService {
         Map<LocalDate, Map<String, Integer>> itemsAvg = new TreeMap<>(); // 키워드별 통계
         Map<LocalDate, Map<String, Integer>> itemsCount = new HashMap<>(); // 키워드별 카운트
         for (Trend item : items) {
-            LocalDate date = item.getCreatedAt().toLocalDate();
+            LocalDate date = item.getCategorydAt().toLocalDate();
             Map<String, Integer> total = itemsTotal.getOrDefault(date, new HashMap<>());
             Map<String, Integer> avg = itemsAvg.getOrDefault(date, new HashMap<>());
             Map<String, Integer> count = itemsCount.getOrDefault(date, new HashMap<>());

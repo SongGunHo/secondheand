@@ -2,10 +2,9 @@ package org.koreait.admin.product.controllers;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.koreait.admin.global.golal.controllers.CommonController;
+import org.koreait.global.golal.controllers.CommonController;
 import org.koreait.admin.product.services.ProductUpdateService;
 import org.koreait.product.constants.ProductStatus;
-import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;

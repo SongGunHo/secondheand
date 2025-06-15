@@ -1,4 +1,4 @@
-package org.koreait.admin.global.search;
+package org.koreait.global.search;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.Getter;

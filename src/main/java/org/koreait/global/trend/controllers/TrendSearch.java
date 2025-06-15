@@ -1,4 +1,4 @@
-package org.koreait.admin.trend.controllers;
+package org.koreait.global.trend.controllers;
 
 import lombok.Data;
 

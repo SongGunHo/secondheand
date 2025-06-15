@@ -1,4 +1,4 @@
-package org.koreait.admin.global.main.controllers;
+package org.koreait.global.main.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package org.koreait.admin.global.search;
+package org.koreait.global.search;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

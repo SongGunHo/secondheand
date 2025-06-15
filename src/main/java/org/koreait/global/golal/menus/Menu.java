@@ -1,4 +1,4 @@
-package org.koreait.admin.global.golal.menus;
+package org.koreait.global.golal.menus;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
