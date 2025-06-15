@@ -132,12 +132,12 @@ public class TrendCollectService {
      * 매 1시간 마다 주기적으로 뉴스 및 저장된 주소 트렌드 수집
      *
      */
-    @Scheduled(fixedRate = 1L, timeUnit = TimeUnit.HOURS)
-    public void scheduledJob() {
-        List<TrendUrl> trendUrls = urlRepository.findAll();
-        List<String> urls = trendUrls == null ? new ArrayList<>() : new ArrayList<>(trendUrls.stream().map(TrendUrl::getSiteUrl).toList());
-        urls.add("https://news.naver.com/");
-
-        urls.forEach(this::process);
-    }
+//    @Scheduled(fixedRate = 1L, timeUnit = TimeUnit.HOURS)
+//    public void scheduledJob() {
+//        List<TrendUrl> trendUrls = urlRepository.findAll();
+//        List<String> urls = trendUrls == null ? new ArrayList<>() : new ArrayList<>(trendUrls.stream().map(TrendUrl::getSiteUrl).toList());
+//        urls.add("https://news.naver.com/");
+//
+//        urls.forEach(this::process);
+//    }
 }

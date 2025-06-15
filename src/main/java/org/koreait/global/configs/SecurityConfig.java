@@ -13,7 +13,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @Configuration
 @RequiredArgsConstructor
 public class SecurityConfig {
-    private final org.koreait.member.services.MemberInfoService memberInfoService;
+//    private final org.koreait.member.services.MemberInfoService memberInfoService;
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -28,7 +28,7 @@ public class SecurityConfig {
         });
 
         http.logout(c -> {
-            c.logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
+//            c.logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
             c.logoutSuccessUrl("/member/login");
         });
         /* 인증 설정 - 로그인, 로그아웃 E */
@@ -37,7 +37,7 @@ public class SecurityConfig {
         http.rememberMe(c -> {
             c.rememberMeParameter("autoLogin")
                     .tokenValiditySeconds(60 * 60 * 24 * 7) // 7일간 자동 로그인 유지
-                    .userDetailsService(memberInfoService)
+//                    .userDetailsService(memberInfoService)
                     .authenticationSuccessHandler(new org.koreait.member.services.LoginSuccessHandler());
         });
 

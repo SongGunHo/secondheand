@@ -9,12 +9,14 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.time.LocalDateTime;
 
 @Lazy
 @Service
 @RequiredArgsConstructor
+@RequestMapping("/admin/member")
 public class JoinService {
 
 
@@ -35,12 +37,12 @@ public class JoinService {
                         mobile = mobile.replaceAll("\\D", "");
                 }
 
-                Member member = modelMapper.map(form, Member.class);
-                member.setPassword(hash);
-                member.setMobile(mobile);
-                member.setCredentialChangedAt(LocalDateTime.now());
-
-                repository.save(member);
+////                Member member = modelMapper.map(form, Member.class);
+//                member.setPassword(hash);
+//                member.setMobile(mobile);
+//                member.setCredentialChangedAt(LocalDateTime.now());
+//
+//                repository.save(member);
 
         }
 }
