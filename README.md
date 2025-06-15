@@ -14,7 +14,7 @@
   - member 패키지 생성
   - trend  클래스 중 entiti 패키지 생성ㅋ
 ## 기능 설명
-   . 네이버 뉴스(Htttpss://www.naver.com) 데이터를 가지고 조회
+   . 네이버 뉴스(htttpss://www.naver.com) 데이터를 가지고 조회
      - 파이썬으로 데이터를 추출
      - 가장 많이 등장 하는 키워드 추출
        
