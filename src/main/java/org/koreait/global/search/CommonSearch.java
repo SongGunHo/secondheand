@@ -1,8 +1,10 @@
 package org.koreait.global.search;
 
 import lombok.Data;
+import org.koreait.member.consts.Authority;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 public class CommonSearch {
@@ -12,4 +14,5 @@ public class CommonSearch {
     private String skey; // 검색 키워드
     private int page; // 페이지 번호, 1, 2, 3, ...
     private int limit; // 한페이지에 조회할 레코드 갯수
+    private List<Authority> authority;
 }

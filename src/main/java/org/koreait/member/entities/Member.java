@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @Data
 @Table("/MEMBER")
 public class Member extends BaseEntity {
+    private Long seq;
     private String email;
     private String password;
     private String mobile;
